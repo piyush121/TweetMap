@@ -45,9 +45,11 @@ public class Main2 {
 	        @Override
 	        public void onStatus(Status status) {
 	                //here you do whatever you want with the tweet
-	            System.out.println(status.getText());
-	            System.out.println(status.getGeoLocation());
-
+	        	if(status.getUser().getLocation()!=null)
+	        	{
+	        		System.out.println(status.getText());
+	        	    System.out.println(status.getUser().getLocation());
+	        	}
 	        }
 
 	        @Override
@@ -86,8 +88,6 @@ public class Main2 {
 		query.geoCode(new GeoLocation(37.781157,-122.398720),3900.0,"mi");
 	    double[][] locations = {{ 40.714623d, -74.006605d },{ 42.3583d, -71.0603d }}; //those are the boundary from New York City
 	    filterQuery.locations(locations);
-	    filterQuery.
-	    twitterStream.
 	    twitterStream.filter(filterQuery);
 
 	}
