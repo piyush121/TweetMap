@@ -2,14 +2,26 @@ package tweetMap;
 
 import java.util.List;
 
-import twitter4j.*;
+import twitter4j.GeoLocation;
+import twitter4j.Query;
+import twitter4j.QueryResult;
+import twitter4j.StallWarning;
+import twitter4j.Status;
+import twitter4j.StatusDeletionNotice;
+import twitter4j.StatusListener;
+import twitter4j.Twitter;
+import twitter4j.TwitterException;
+import twitter4j.TwitterFactory;
+import twitter4j.TwitterStream;
+import twitter4j.TwitterStreamFactory;
 import twitter4j.auth.AccessToken;
+import twitter4j.conf.ConfigurationBuilder;
 
 /**
  * @author Piyush Chaudhary
  *
  */
-public class Main  {
+public class Main {
 	public static void main(String[] args) {
 
 		final Twitter twitter = new TwitterFactory().getInstance();
@@ -46,53 +58,8 @@ public class Main  {
 			System.out.println("Failed to search tweets: " + te.getMessage());
 			System.exit(-1);
 		}
-
+		
 	}
-	TwitterStream twitterStream = new TwitterStreamFactory().getInstance();
-    StatusListener listener = new StatusListener() {
-
-        @Override
-        public void onStatus(Status status) {
-                //here you do whatever you want with the tweet
-            System.out.println(status.getText());
-
-        }
-
-        @Override
-        public void onException(Exception ex) {
-            ex.printStackTrace();
-        }
-
-        @Override
-        public void onDeletionNotice(StatusDeletionNotice arg0) {
-                  // TODO Auto-generated method stub
-
-        }
-
-        @Override
-        public void onScrubGeo(long arg0, long arg1) {
-
-        }
-
-        @Override
-        public void onStallWarning(StallWarning arg0) {
-            // TODO Auto-generated method stub
-            System.out.println(arg0);
-        }
-
-        @Override
-        public void onTrackLimitationNotice(int arg0) {
-            // TODO Auto-generated method stub
-            System.out.println(arg0);
-        }
-
-    };
-
-    twitterStream.addListener(listener);
-    FilterQuery filterQuery = new FilterQuery();
-    double[][] locations = {{-74,40}, {-73,41}}; //those are the boundary from New York City
-    filterQuery.locations(locations);
-    twitterStream.filter(filterQuery);
-    twitterStream.filter(filterQuery);
+	
 
 }
