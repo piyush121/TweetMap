@@ -19,10 +19,8 @@ public class Main {
 		twitter.setOAuthAccessToken(accessToken);
 
 		try {
-			Query query = new Query("#iphone6");
-
-			// query.geoCode(new
-			// GeoLocation(37.781157,-122.398720),3900.0,"mi");
+			Query query = new Query("#oscar");
+			 query.geoCode(new GeoLocation(37.781157,-122.398720),3900.0,"mi");
 
 			QueryResult result;
 			System.out.println("Searching...");
@@ -30,11 +28,10 @@ public class Main {
 
 			do {
 				result = twitter.search(query);
-
 				List<Status> tweets = result.getTweets();
 				for (Status tweet : tweets) {
-					{ // if(tweet.getGeoLocation()!=null)
-						System.out.println(tweet.getText());
+					{  if(tweet.getGeoLocation()!=null)
+						System.out.println(tweet.getText()+" "+ tweet.getGeoLocation());
 						count++;
 					}
 				}
