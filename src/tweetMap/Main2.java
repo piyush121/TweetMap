@@ -45,7 +45,6 @@ public class Main2 {
 	        @Override
 	        public void onStatus(Status status) {
 	                //here you do whatever you want with the tweet
-	        	status.getUser().get
 	        	if(status.getGeoLocation()!=null && status.getText().contains("#oscar"))
 	        	{
 	        		System.out.println(status.getText());

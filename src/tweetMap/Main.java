@@ -1,6 +1,7 @@
 package tweetMap;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
@@ -51,13 +52,12 @@ public class Main {
 			QueryResult result;
 			System.out.println("Searching...");
 			int count = 0;
-			fileWriter = new FileWriter("tweets.csv",true);
-			BufferedWriter bw = null;
-			bw = new BufferedWriter(fileWriter);
+			File file = new File("C:\\Users\\piyus\\workspace\\TweetMap\\src\\tweetMap\\tweets.csv");
+			fileWriter = new FileWriter(file);
 			// Write the CSV file header
-			bw.write(FILE_HEADER.toString());
+			fileWriter.write(FILE_HEADER.toString());
 
-			bw.append(NEW_LINE_SEPARATOR);
+			fileWriter.append(NEW_LINE_SEPARATOR);
 
 			do {
 
@@ -80,6 +80,7 @@ public class Main {
 
 						}
 					}
+					
 				}
 
 			} while ((query = result.nextQuery()) != null);
