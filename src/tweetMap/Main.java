@@ -29,13 +29,13 @@ public class Main {
 	public static void main(String[] args) throws IOException {
 
 		ConfigurationBuilder builder = new ConfigurationBuilder();
-		builder.setOAuthConsumerKey("wexQs0nZ1Mfq5rZAAiXFgVHnz");
-		builder.setOAuthConsumerSecret("2df8sukTaanmptybHxEa1Xi1KxzVxlgkPmjUpwcu6LPdgKH3nX");
+		builder.setOAuthConsumerKey("");
+		builder.setOAuthConsumerSecret("");
 		Configuration configuration = builder.build();
 		TwitterFactory factory = new TwitterFactory(configuration);
 		Twitter twitter = factory.getInstance();
-		final AccessToken accessToken = new AccessToken("39964732-rBS2TnH2wQ52VuQZjodzyJwku49byY8WdWf3h9USA",
-				"cfTLD9cEpKaypEJ6Xzt1BPZyRondv8lqtQtjlBFmCfRlb");
+		final AccessToken accessToken = new AccessToken("",
+				"");
 		twitter.setOAuthAccessToken(accessToken);
 		// Delimiter used in CSV file
 		String COMMA_DELIMITER = ",";
