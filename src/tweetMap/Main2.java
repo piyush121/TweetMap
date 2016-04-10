@@ -27,14 +27,13 @@ public class Main2 {
 
 		//final Twitter twitter = new TwitterFactory().getInstance();
 		
-	//	twitter.setOAuthConsumer("wexQs0nZ1Mfq5rZAAiXFgVHnz", "2df8sukTaanmptybHxEa1Xi1KxzVxlgkPmjUpwcu6LPdgKH3nX");
-		//twitter.setOAuthAccessToken(accessToken);
+
 		
 		ConfigurationBuilder cb = new ConfigurationBuilder();
-	    cb.setDebugEnabled(true).setOAuthConsumerKey("wexQs0nZ1Mfq5rZAAiXFgVHnz")
-	            .setOAuthConsumerSecret("2df8sukTaanmptybHxEa1Xi1KxzVxlgkPmjUpwcu6LPdgKH3nX")
-	            .setOAuthAccessToken("39964732-rBS2TnH2wQ52VuQZjodzyJwku49byY8WdWf3h9USA")
-	            .setOAuthAccessTokenSecret("cfTLD9cEpKaypEJ6Xzt1BPZyRondv8lqtQtjlBFmCfRlb");
+	    cb.setDebugEnabled(true).setOAuthConsumerKey("")
+	            .setOAuthConsumerSecret("")
+	            .setOAuthAccessToken("")
+	            .setOAuthAccessTokenSecret("");
 
 	    TwitterStream twitterStream = new TwitterStreamFactory(cb.build())
 	            .getInstance();
